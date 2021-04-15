@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="29f1576b-d44e-423f-956e-e74464ffa47b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1r7PyQqwuKxR6f0wakJgsLGkKSu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../minta prog/Diamond Hunter" />
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="JSlender" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Simple" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Simple" />
+      <module name="JSlender" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleSudoku" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SimpleSudoku" />
+      <module name="JSlender" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="game" />
+      <module name="JSlender" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main" />
+      <module name="JSlender" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Simple" />
+        <item itemvalue="Application.SimpleSudoku" />
+        <item itemvalue="Application.game" />
+        <item itemvalue="Application.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="29f1576b-d44e-423f-956e-e74464ffa47b" name="Default Changelist" comment="" />
+      <created>1618324408186</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618324408186</updated>
+      <workItem from="1618324411545" duration="3453000" />
+      <workItem from="1618379977212" duration="1829000" />
+      <workItem from="1618383270328" duration="2562000" />
+      <workItem from="1618404336193" duration="4061000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="235" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1618325327249">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="414" y="235" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1618325327249" />
+    <state x="690" y="327" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1618384817113">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="690" y="327" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1618384817113" />
+    <state x="740" y="335" key="FileChooserDialogImpl" timestamp="1618383600936">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="740" y="335" key="FileChooserDialogImpl/0.0.1920.1160@0.0.1920.1160" timestamp="1618383600936" />
+    <state width="1877" height="240" key="GridCell.Tab.0.bottom" timestamp="1618408430855">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1877" height="240" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1618408430855" />
+    <state width="1877" height="240" key="GridCell.Tab.0.center" timestamp="1618408430855">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1877" height="240" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1618408430855" />
+    <state width="1877" height="240" key="GridCell.Tab.0.left" timestamp="1618408430855">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1877" height="240" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1618408430855" />
+    <state width="1877" height="240" key="GridCell.Tab.0.right" timestamp="1618408430855">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1877" height="240" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1618408430855" />
+    <state width="1877" height="165" key="GridCell.Tab.1.bottom" timestamp="1618381931115">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1877" height="165" key="GridCell.Tab.1.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1618381931115" />
+    <state width="1877" height="165" key="GridCell.Tab.1.center" timestamp="1618381931115">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1877" height="165" key="GridCell.Tab.1.center/0.0.1920.1160@0.0.1920.1160" timestamp="1618381931115" />
+    <state width="1877" height="165" key="GridCell.Tab.1.left" timestamp="1618381931115">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1877" height="165" key="GridCell.Tab.1.left/0.0.1920.1160@0.0.1920.1160" timestamp="1618381931115" />
+    <state width="1877" height="165" key="GridCell.Tab.1.right" timestamp="1618381931115">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1877" height="165" key="GridCell.Tab.1.right/0.0.1920.1160@0.0.1920.1160" timestamp="1618381931115" />
+    <state x="656" y="404" key="com.intellij.ide.util.TipDialog" timestamp="1618404361083">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="656" y="404" key="com.intellij.ide.util.TipDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1618404361083" />
+    <state x="666" y="199" key="refactoring.ChangeSignatureDialog" timestamp="1618408228480">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="666" y="199" key="refactoring.ChangeSignatureDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1618408228480" />
+  </component>
+</project>
