@@ -15,7 +15,7 @@ class Map extends JPanel {
     }
 
     private static final int GAP = 1;
-    private final Font LABEL_FONT = new Font(Font.DIALOG, Font.PLAIN, 40);
+    private final Font LABEL_FONT = new Font(Font.DIALOG, Font.PLAIN, 50);
     public JLabel[][] grid = new JLabel[15][15];
     public int[][] gridhow = {
             {1, 1, 1, 0, 0, 0, 3, 3, 3, 0, 2, 0, 0, 0, 0},
@@ -44,7 +44,7 @@ class Map extends JPanel {
                  for (int col = 0; col < grid[row].length; col++) {
                      //System.out.print(gridhow[row][col]);
                      grid[row][col] = new JLabel("      ", SwingConstants.CENTER);
-                     grid[row][col].setFont(LABEL_FONT); // make it big
+                     grid[row][col].setFont(LABEL_FONT);
                      grid[row][col].setOpaque(true);
                      if(gridhow[row][col]==0){
                          grid[row][col].setBackground(Color.WHITE);
