@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29f1576b-d44e-423f-956e-e74464ffa47b" name="Default Changelist" comment="" />
+    <list default="true" id="29f1576b-d44e-423f-956e-e74464ffa47b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Custom.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Papers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Papers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +28,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="ProjectId" id="1r7PyQqwuKxR6f0wakJgsLGkKSu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -27,9 +40,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../minta prog/Diamond Hunter" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -91,6 +105,7 @@
       <workItem from="1618379977212" duration="1829000" />
       <workItem from="1618383270328" duration="2562000" />
       <workItem from="1618404336193" duration="4061000" />
+      <workItem from="1618814741432" duration="4357000" />
     </task>
     <servers />
   </component>
@@ -110,22 +125,22 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="740" y="335" key="FileChooserDialogImpl/0.0.1920.1160@0.0.1920.1160" timestamp="1618383600936" />
-    <state width="1877" height="240" key="GridCell.Tab.0.bottom" timestamp="1618408430855">
+    <state width="1877" height="240" key="GridCell.Tab.0.bottom" timestamp="1618819812439">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="240" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1618408430855" />
-    <state width="1877" height="240" key="GridCell.Tab.0.center" timestamp="1618408430855">
+    <state width="1877" height="240" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1618819812439" />
+    <state width="1877" height="240" key="GridCell.Tab.0.center" timestamp="1618819812439">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="240" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1618408430855" />
-    <state width="1877" height="240" key="GridCell.Tab.0.left" timestamp="1618408430855">
+    <state width="1877" height="240" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1618819812439" />
+    <state width="1877" height="240" key="GridCell.Tab.0.left" timestamp="1618819812439">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="240" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1618408430855" />
-    <state width="1877" height="240" key="GridCell.Tab.0.right" timestamp="1618408430855">
+    <state width="1877" height="240" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1618819812439" />
+    <state width="1877" height="240" key="GridCell.Tab.0.right" timestamp="1618819812439">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="240" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1618408430855" />
+    <state width="1877" height="240" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1618819812439" />
     <state width="1877" height="165" key="GridCell.Tab.1.bottom" timestamp="1618381931115">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
@@ -142,6 +157,10 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1877" height="165" key="GridCell.Tab.1.right/0.0.1920.1160@0.0.1920.1160" timestamp="1618381931115" />
+    <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1618819887291">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="552" y="313" key="Vcs.Push.Dialog.v2/0.0.1920.1160@0.0.1920.1160" timestamp="1618819887291" />
     <state x="656" y="404" key="com.intellij.ide.util.TipDialog" timestamp="1618404361083">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
