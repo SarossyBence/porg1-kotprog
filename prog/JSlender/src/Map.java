@@ -37,64 +37,38 @@ class Map extends JPanel {
 
 
     public Map() {
-
         JPanel Panel = new JPanel(new GridLayout(15, 15, GAP, GAP));
         Panel.setBorder(BorderFactory.createEmptyBorder(GAP, GAP, GAP, GAP));
         Panel.setBackground(Color.BLACK);
-
             for(int row = 0; row<grid.length;row++) {
                  for (int col = 0; col < grid[row].length; col++) {
                      System.out.print(gridhow[row][col]);
+                     grid[row][col] = new JLabel("      ", SwingConstants.CENTER);
+                     grid[row][col].setFont(LABEL_FONT); // make it big
+                     grid[row][col].setOpaque(true);
                      if(gridhow[row][col]==0){
-                         grid[row][col] = new JLabel("      ", SwingConstants.CENTER);
-                         grid[row][col].setFont(LABEL_FONT); // make it big
-                              grid[row][col].setOpaque(true);
                                    grid[row][col].setBackground(Color.WHITE);
                                     Panel.add(grid[row][col]);}
                       if (gridhow[row][col]==1){
-                          grid[row][col] = new JLabel("     ", SwingConstants.CENTER);
-                            // make it big
-                             grid[row][col].setOpaque(true);
                              grid[row][col].setBackground(Color.gray);
                               Panel.add(grid[row][col]);}
                      if (gridhow[row][col]==2){
-                         grid[row][col] = new JLabel("     ", SwingConstants.CENTER);
-                         // make it big
-                         grid[row][col].setOpaque(true);
                          grid[row][col].setBackground(Color.green);
                          Panel.add(grid[row][col]);}
                      if (gridhow[row][col]==3){
-                         grid[row][col] = new JLabel("     ", SwingConstants.CENTER);
-                         // make it big
-                         grid[row][col].setOpaque(true);
                          grid[row][col].setBackground(Color.blue);
                          Panel.add(grid[row][col]);}
                      if (gridhow[row][col]==4){
-                         grid[row][col] = new JLabel("     ", SwingConstants.CENTER);
-                         // make it big
-                         grid[row][col].setOpaque(true);
                          grid[row][col].setBackground(Color.yellow);
                          Panel.add(grid[row][col]);}
                      if (gridhow[row][col]==4){
-                         grid[row][col] = new JLabel("     ", SwingConstants.CENTER);
-                         // make it big
-                         grid[row][col].setOpaque(true);
                          grid[row][col].setBackground(Color.orange);
                          Panel.add(grid[row][col]);}
-        }
-
-    }
-
-
-
-
+                 } }
             JPanel bottomPanel = new JPanel();
             bottomPanel.add(new JButton("res"));
-
             setLayout(new BorderLayout());
             add(Panel, BorderLayout.CENTER);
             add(bottomPanel, BorderLayout.PAGE_END);
-
-        }
-}
+        }}
 
