@@ -3,9 +3,7 @@ import javax.swing.*;
 public class Main{
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            createAndShowGui();
-        });
+        SwingUtilities.invokeLater(Main::createAndShowGui);
     }
 
     private static void createAndShowGui() {
