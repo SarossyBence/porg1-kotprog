@@ -10,12 +10,8 @@ class Map extends JPanel {
         return grid;
     }
 
-    public void setGrid(JLabel[][] grid) {
-        this.grid = grid;
-    }
-
     private static final int GAP = 1;
-    private final Font LABEL_FONT = new Font(Font.DIALOG, Font.PLAIN, 50);
+    private final Font LABEL_FONT = new Font(Font.DIALOG, Font.PLAIN, 40);
     public JLabel[][] grid = new JLabel[15][15];
     public int[][] gridhow = {
             {1, 1, 1, 0, 0, 0, 3, 3, 3, 0, 2, 0, 0, 0, 0},
@@ -43,7 +39,9 @@ class Map extends JPanel {
             for(int row = 0; row<grid.length;row++) {
                  for (int col = 0; col < grid[row].length; col++) {
                      //System.out.print(gridhow[row][col]);
-                     grid[row][col] = new JLabel("      ", SwingConstants.CENTER);
+                     if(row==14 && col==14){
+                            grid[row][col] = new JLabel("  p  ", SwingConstants.CENTER);
+                     }else{ grid[row][col] = new JLabel("     ", SwingConstants.CENTER);}
                      grid[row][col].setFont(LABEL_FONT);
                      grid[row][col].setOpaque(true);
                      if(gridhow[row][col]==0){
@@ -71,10 +69,12 @@ class Map extends JPanel {
                          grid[row][col].setBackground(Color.black);
                          Panel.add(grid[row][col]);}
                  } }
-            JPanel bottomPanel = new JPanel();
-            bottomPanel.add(new JButton("res"));
+            JPanel bot = new JPanel();
+            bot.add(new JButton("f"));
             setLayout(new BorderLayout());
             add(Panel, BorderLayout.CENTER);
-            add(bottomPanel, BorderLayout.PAGE_END);
+            add(bot, BorderLayout.PAGE_END);
+
+
         }}
 
