@@ -2,11 +2,12 @@ import javax.swing.*;
 
 public class Papers extends Character{
     static ImageIcon icon = new ImageIcon("src/img/paper.png");
-    public Papers(int x, int y, boolean vis, String view) {
-        super(x, y, vis, view);
+    public Papers(int x, int y, boolean vis) {
+        super(x, y, vis);
+        setVisible(false);
     }
 
-    public static ImageIcon getIcon() {
+    public ImageIcon getIcon() {
         return icon;
     }
 }

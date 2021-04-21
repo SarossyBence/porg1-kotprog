@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="29f1576b-d44e-423f-956e-e74464ffa47b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Papers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Papers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Slenderman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slenderman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/paper.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/paper.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/player.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/player.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +109,7 @@
       <workItem from="1618814741432" duration="7931000" />
       <workItem from="1618839511091" duration="3244000" />
       <workItem from="1618903099935" duration="9463000" />
-      <workItem from="1618985754317" duration="4691000" />
+      <workItem from="1618985754317" duration="13803000" />
     </task>
     <servers />
   </component>
@@ -111,10 +117,18 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="552" y="238" key="#Code_Folding" timestamp="1619033576232">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="552" y="238" key="#Code_Folding/0.0.1920.1160@0.0.1920.1160" timestamp="1619033576232" />
     <state x="414" y="235" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1618325327249">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="414" y="235" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1618325327249" />
+    <state x="765" y="281" key="#com.intellij.ide.util.MemberChooser" timestamp="1619010099512">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="765" y="281" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1160@0.0.1920.1160" timestamp="1619010099512" />
     <state x="690" y="327" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1618384817113">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
@@ -123,22 +137,22 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="740" y="335" key="FileChooserDialogImpl/0.0.1920.1160@0.0.1920.1160" timestamp="1618383600936" />
-    <state width="1877" height="240" key="GridCell.Tab.0.bottom" timestamp="1618999422016">
+    <state width="1877" height="240" key="GridCell.Tab.0.bottom" timestamp="1619033879494">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="240" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1618999422016" />
-    <state width="1877" height="240" key="GridCell.Tab.0.center" timestamp="1618999422015">
+    <state width="1877" height="240" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1619033879494" />
+    <state width="1877" height="240" key="GridCell.Tab.0.center" timestamp="1619033879494">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="240" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1618999422015" />
-    <state width="1877" height="240" key="GridCell.Tab.0.left" timestamp="1618999422015">
+    <state width="1877" height="240" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1619033879494" />
+    <state width="1877" height="240" key="GridCell.Tab.0.left" timestamp="1619033879494">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="240" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1618999422015" />
-    <state width="1877" height="240" key="GridCell.Tab.0.right" timestamp="1618999422016">
+    <state width="1877" height="240" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1619033879494" />
+    <state width="1877" height="240" key="GridCell.Tab.0.right" timestamp="1619033879494">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="240" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1618999422016" />
+    <state width="1877" height="240" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1619033879494" />
     <state width="1877" height="165" key="GridCell.Tab.1.bottom" timestamp="1618381931115">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
@@ -163,10 +177,10 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="656" y="404" key="com.intellij.ide.util.TipDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1618985853341" />
-    <state x="769" y="497" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618941831116">
+    <state x="769" y="497" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1619033176080">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="769" y="497" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1160@0.0.1920.1160" timestamp="1618941831116" />
+    <state x="769" y="497" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1160@0.0.1920.1160" timestamp="1619033176080" />
     <state x="666" y="199" key="refactoring.ChangeSignatureDialog" timestamp="1618408228480">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>

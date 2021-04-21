@@ -1,38 +1,61 @@
 import javax.swing.*;
 
 public class  Player extends Character{
-    static ImageIcon icon = new ImageIcon("src/img/player.png");
-
-    Player(int x,int y, boolean vis,String view){
-        super(x, y,vis,view);
+    private ImageIcon icon = new ImageIcon("src/img/player.png");
+    private Map current;
+    public JLabel[][] grid;
+   public Player(int x,int y, boolean vis,Map current){
+        super(x, y,vis);
+        this.grid=current.getGrid();
+        this.current= current;
     }
-    public static ImageIcon getIcon() {
+
+    public  ImageIcon getIcon() {
         return icon;
     }
 
+public boolean index(int a){
+       if (a>0 || a<14){
+           return true;
+       }else {return false;}
+}
 
+    public boolean up(){
+        if (index(locatex-1)){
+                    if(current.getGridhow()[locatex-1][locatey]==0 || current.getGridhow()[locatex][locatey-1]==2 || current.getGridhow()[locatex][locatey-1]==5  ) {
+                        grid[locatex - 1][locatey].setIcon(icon);
+                    }}else{return false;}
+        return true;
 
-    public JLabel[][] grid= Map.getGrid();
+    }
+    public boolean down(){
+        if (index(locatex+1)){
+        if(current.getGridhow()[locatex+1][locatey]==0 || current.getGridhow()[locatex][locatey+1]==2 || current.getGridhow()[locatex][locatey+1]==5  ) {
+            grid[locatex + 1][locatey].setIcon(icon);
+        }}else{return false;}
+        return true;
 
+    }
+    public boolean left() {
+        if (index(locatey - 1)) {
+            if (current.getGridhow()[locatex][locatey - 1] == 0 || current.getGridhow()[locatex][locatey - 1] == 2 || current.getGridhow()[locatex][locatey - 1] == 5) {
+                grid[locatex][locatey - 1].setIcon(icon);
 
-
-
-    public void up(){
-        for(int row = 0; row<grid.length;row++) {
-            for (int col = 0; col < grid[row].length; col++) {
-                if(grid[row][col].equals(icon)){
-                    if(Map.getGridhow()[row+1][col]!=1 || Map.getGridhow()[row+1][col]!=3||Map.getGridhow()[row+1][col]!=4||Map.getGridhow()[row+1][col]!=6||Map.getGridhow()[row+1][col]!=7) {
-                        grid[row + 1][col].setIcon(icon);
-                        grid[row][col].setIcon(icon);
-                    }
-                }
             }
+        } else {
+            return false;
         }
+        return true;
     }
-    public void walkDown(){
+    public boolean right(){
+        if (index(locatey+1)){
+        if(current.getGridhow()[locatex][locatey+1]==0 || current.getGridhow()[locatex][locatey+1]==2 || current.getGridhow()[locatex][locatey+1]==5  ) {
+            grid[locatex][locatey+1].setIcon(icon);
+
+        }}else{return false;}
+        return true;
 
     }
-    public void walkLLeft(){}
-    public void walkRight(){}
+
     public void gather(){}
 }
