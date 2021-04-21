@@ -22,8 +22,8 @@ public class  Player extends Character{
             for (int col = 0; col < grid[row].length; col++) {
                 if(grid[row][col].equals(icon)){
                     if(Map.getGridhow()[row+1][col]!=1 || Map.getGridhow()[row+1][col]!=3||Map.getGridhow()[row+1][col]!=4||Map.getGridhow()[row+1][col]!=6||Map.getGridhow()[row+1][col]!=7) {
-                        grid[row + 1][col].setText("  p  ");
-                        grid[row][col].setText("  p  ");
+                        grid[row + 1][col].setIcon(icon);
+                        grid[row][col].setIcon(icon);
                     }
                 }
             }
