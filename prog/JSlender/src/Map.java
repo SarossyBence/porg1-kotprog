@@ -6,17 +6,19 @@ import java.awt.GridLayout;
 class Map extends JPanel {
 
 
-    public JLabel[][] getGrid() {
+
+    public static JLabel[][] getGrid() {
         return grid;
     }
+
     public JButton button1 = new JButton("Up");
     public JButton button2 = new JButton("Down");
     public JButton button3 = new JButton("Left");
     public JButton button4 = new JButton("Right");
     private static final int GAP = 1;
     private final Font LABEL_FONT = new Font(Font.DIALOG, Font.PLAIN, 40);
-    public JLabel[][] grid = new JLabel[15][15];
-    public int[][] gridhow = {
+    public static JLabel[][] grid = new JLabel[15][15];
+    public static int[][] gridhow = {
             {1, 1, 1, 0, 0, 0, 3, 3, 3, 0, 2, 0, 0, 0, 0},
             {1, 1, 1, 2, 0, 0, 3, 3, 3, 0, 0, 0, 2, 0, 0},
             {1, 1, 1, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4, 0},
@@ -34,17 +36,12 @@ class Map extends JPanel {
             {2, 2, 0, 0, 2, 2, 0, 0, 0, 0, 6, 6, 0, 0, 0},
     };
 
-public void up(){
-    for(int row = 0; row<grid.length;row++) {
-        for (int col = 0; col < grid[row].length; col++) {
-            if(grid[row][col].contains("  p  ")){
-            if(gridhow[row+1][col]!=1 || gridhow[row+1][col]!=3||gridhow[row+1][col]!=4||gridhow[row+1][col]!=6||gridhow[row+1][col]!=7) {
-                grid[row + 1][col] ="  p  ";
-                grid[row][col] ="     ";
-            }
-            }
-        }}
-}
+    public static int[][] getGridhow() {
+        return gridhow;
+    }
+
+    /*
+    }*/
     public Map() {
         JPanel Panel = new JPanel(new GridLayout(15, 15, GAP, GAP));
         Panel.setBorder(BorderFactory.createEmptyBorder(GAP, GAP, GAP, GAP));
@@ -53,7 +50,7 @@ public void up(){
                  for (int col = 0; col < grid[row].length; col++) {
                      //System.out.print(gridhow[row][col]);
                      if(row==14 && col==14){
-                            grid[row][col] = new JLabel("  p  ", SwingConstants.CENTER);
+                            grid[row][col] = new JLabel(Player.getIcon(), SwingConstants.CENTER);
                      }else{ grid[row][col] = new JLabel("     ", SwingConstants.CENTER);}
                      grid[row][col].setFont(LABEL_FONT);
                      grid[row][col].setOpaque(true);
