@@ -15,6 +15,8 @@ public class Main{
         frame.setMinimumSize(new Dimension(800,800));
         frame.setLocationByPlatform(true);
         frame.setVisible(true);
+        frame.setFocusable(true);
+        frame.requestFocusInWindow();
 
     }
 }

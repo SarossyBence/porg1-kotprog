@@ -2,15 +2,24 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-class Map extends JPanel {
+class Map extends JPanel implements KeyListener {
 
     public JLabel[][] getGrid()
     {
         return grid;
     }
     public Player szar = new Player(14,14,true,this);
-    public JButton button0 = new JButton("start");
+    public Papers pap0=new Papers(11,10,true,this);
+    public Papers pap1=new Papers(9,7,true,this);
+    public Papers pap2=new Papers(5,10,true,this);
+    public Papers pap3=new Papers(2,2,true,this);
+    public Papers pap4=new Papers(4,6,true,this);
+    public Papers pap5=new Papers(6,2,true,this);
+    public Papers pap6=new Papers(8,13,true,this);
+    public Papers pap7=new Papers(1,6,true,this);
     public JButton button1 = new JButton("Up");
     public JButton button2 = new JButton("Down");
     public JButton button3 = new JButton("Left");
@@ -23,8 +32,8 @@ class Map extends JPanel {
             {1, 1, 1, 0, 0, 0, 3, 3, 3, 0, 2, 0, 0, 0, 0},
             {1, 1, 1, 2, 0, 0, 3, 3, 3, 0, 0, 0, 2, 0, 0},
             {1, 1, 1, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4, 0},
-            {0, 0, 0, 7, 7, 7, 0, 0, 5, 5, 4, 5, 5, 4, 0},
-            {2, 0, 0, 7, 7, 7, 0, 0, 4, 5, 5, 5, 5, 4, 0},
+            {0, 0, 0, 7, 7, 7, 7, 0, 5, 5, 4, 5, 5, 4, 0},
+            {2, 0, 0, 7, 7, 7, 7, 0, 4, 5, 5, 5, 5, 4, 0},
             {0, 0, 0, 0, 0, 0, 0, 2, 4, 4, 4, 4, 5, 4, 2},
             {1, 1, 1, 0, 0, 0, 0, 0, 4, 5, 4, 5, 5, 4, 0},
             {1, 1, 1, 0, 0, 0, 3, 3, 4, 5, 5, 5, 5, 4, 0},
@@ -84,28 +93,28 @@ class Map extends JPanel {
                              Panel.add(grid[row][col]);
                              break;
                          case 7:
-                             grid[row][col].setBackground(Color.black);
+                             grid[row][col].setBackground(Color.DARK_GRAY);
                              Panel.add(grid[row][col]);
                              break;
                      }
                  }}
 
-
-
+        pap0.place(grid);
+        pap1.place(grid);
+        pap2.place(grid);
+        pap3.place(grid);
+        pap4.place(grid);
+        pap5.place(grid);
+        pap6.place(grid);
+        pap7.place(grid);
+        szar.start(grid);
             JPanel bot = new JPanel();
-            bot.add(button0);
-        button2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                szar.start();
-
-            }
-        });
+           bot.add(new JLabel("counter:"+ szar.getCounter()));
             bot.add(button1);
             button1.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent actionEvent) {
-                    szar.up();
+                    szar.up(grid);
 
                 }
             });
@@ -114,7 +123,7 @@ class Map extends JPanel {
         button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                szar.down();
+                szar.down(grid);
             }
         });
             bot.add(button3);
@@ -122,21 +131,21 @@ class Map extends JPanel {
         button3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                szar.left();
+                szar.left(grid);
             }
         });
             bot.add(button4);
         button4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                szar.right();
+                szar.right(grid);
             }
         });
-        bot.add(button5);
+       bot.add(button5);
         button5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                szar.gather();
+                szar.gather(grid);
             }
         });
             setLayout(new BorderLayout());
@@ -145,5 +154,37 @@ class Map extends JPanel {
 
 
 
-        }}
+        }
+
+    @Override
+    public void keyTyped(KeyEvent keyEvent) {
+        System.out.println("itt vagyok kocsog");
+    }
+
+    @Override
+    public void keyPressed(KeyEvent keyEvent) {
+        System.out.println("itt vagyok kocsog");
+        switch (keyEvent.getKeyCode()){
+            case KeyEvent.VK_W:
+                szar.up(grid);
+                break;
+            case KeyEvent.VK_S:
+
+                szar.down(grid);
+                break;
+                case KeyEvent.VK_A:
+                szar.left(grid);
+                break;
+            case KeyEvent.VK_D:
+                szar.right(grid);
+                break;
+
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent keyEvent) {
+
+    }
+}
 

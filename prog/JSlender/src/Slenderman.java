@@ -1,7 +1,7 @@
 import javax.swing.*;
 
 public class Slenderman extends Character {
-    static ImageIcon sicon = new ImageIcon("src/img/slender.png");
+    static ImageIcon icon = new ImageIcon("src/img/slender.png");
 
 
     public Slenderman(int x, int y, boolean vis) {
@@ -10,7 +10,7 @@ public class Slenderman extends Character {
     }
 
     public static ImageIcon getIcon() {
-        return sicon;
+        return icon;
     }
 
     public void teleport(){}
