@@ -3,7 +3,7 @@ import javax.swing.*;
 public class  Player extends Character{
     private ImageIcon icon = new ImageIcon("src/img/player.png");
     private Map current;
-    private int counter;
+    public int counter;
   //  public JLabel[][] grid;
    public Player(int x,int y, boolean vis,Map current){
         super(x, y,vis);
@@ -91,22 +91,27 @@ public void start(JLabel grid[][]){
    public void gather(JLabel grid[][]){
 
     if(grid[locatex][locatey+1].getIcon()==Papers.getIcon()){
+
         counter++;
         grid[locatex][locatey+1].setIcon(null);
 
     }
     if(grid[locatex+1][locatey].getIcon()==Papers.getIcon()){
+
         counter++;
         grid[locatex+1][locatey].setIcon(null);
     }
     if(grid[locatex-1][locatey].getIcon()==Papers.getIcon()){
+
         counter++;
         grid[locatex-1][locatey].setIcon(null);
     }
     if(grid[locatex][locatey-1].getIcon()==Papers.getIcon()){
+
         counter++;
         grid[locatex][locatey-1].setIcon(null);
     }
-    System.out.println(counter);
+    //System.out.println(counter);
+
     }
 }

@@ -20,6 +20,8 @@ class Map extends JPanel implements KeyListener {
     public Papers pap5=new Papers(6,2,true,this);
     public Papers pap6=new Papers(8,13,true,this);
     public Papers pap7=new Papers(1,6,true,this);
+
+    
     public JButton button1 = new JButton("Up");
     public JButton button2 = new JButton("Down");
     public JButton button3 = new JButton("Left");
@@ -50,8 +52,10 @@ class Map extends JPanel implements KeyListener {
         return gridhow;
     }
 
+
+
     /*
-    }*/
+        }*/
     public Map() {
 
         JPanel Panel = new JPanel(new GridLayout(15, 15, GAP, GAP));
@@ -109,7 +113,8 @@ class Map extends JPanel implements KeyListener {
         pap7.place(grid);
         szar.start(grid);
             JPanel bot = new JPanel();
-           bot.add(new JLabel("counter:"+ szar.getCounter()));
+
+
             bot.add(button1);
             button1.addActionListener(new ActionListener() {
                 @Override
@@ -146,6 +151,7 @@ class Map extends JPanel implements KeyListener {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 szar.gather(grid);
+
             }
         });
             setLayout(new BorderLayout());
