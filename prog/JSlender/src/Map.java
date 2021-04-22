@@ -11,7 +11,8 @@ class Map extends JPanel implements KeyListener {
     {
         return grid;
     }
-    public Player szar = new Player(14,14,true,this);
+    public Player person = new Player(14,14,true,this);
+    public Slenderman slender = new Slenderman(1,1,true,this);
     public Papers pap0=new Papers(11,10,true,this);
     public Papers pap1=new Papers(9,7,true,this);
     public Papers pap2=new Papers(5,10,true,this);
@@ -28,7 +29,7 @@ class Map extends JPanel implements KeyListener {
     public JButton button4 = new JButton("Right");
     public JButton button5 = new JButton("gather");
     private static final int GAP = 1;
-    private final Font LABEL_FONT = new Font(Font.DIALOG, Font.PLAIN, 40);
+    private final Font lab = new Font(Font.DIALOG, Font.PLAIN, 40);
     public  JLabel[][] grid = new JLabel[15][15];
     public int[][] gridhow = {
             {1, 1, 1, 0, 0, 0, 3, 3, 3, 0, 2, 0, 0, 0, 0},
@@ -65,7 +66,7 @@ class Map extends JPanel implements KeyListener {
                  for (int col = 0; col < grid[row].length; col++) {
                      //System.out.print(gridhow[row][col]);
                      grid[row][col] = new JLabel("", SwingConstants.CENTER);
-                     grid[row][col].setFont(LABEL_FONT);
+                     grid[row][col].setFont(lab);
                      grid[row][col].setOpaque(true);
                      switch (gridhow[row][col]) {
                          case 0:
@@ -111,7 +112,7 @@ class Map extends JPanel implements KeyListener {
         pap5.place(grid);
         pap6.place(grid);
         pap7.place(grid);
-        szar.start(grid);
+        person.start(grid);
             JPanel bot = new JPanel();
 
 
@@ -119,7 +120,9 @@ class Map extends JPanel implements KeyListener {
             button1.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent actionEvent) {
-                    szar.up(grid);
+                    person.up(grid);
+
+
 
                 }
             });
@@ -128,7 +131,7 @@ class Map extends JPanel implements KeyListener {
         button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                szar.down(grid);
+                person.down(grid);
             }
         });
             bot.add(button3);
@@ -136,21 +139,24 @@ class Map extends JPanel implements KeyListener {
         button3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                szar.left(grid);
+                person.left(grid);
             }
         });
             bot.add(button4);
         button4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                szar.right(grid);
+                person.right(grid);
             }
         });
        bot.add(button5);
         button5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                szar.gather(grid);
+                person.gather(grid);
+                if(person.getCounter()==1){
+                    slender.come(grid);
+                }
 
             }
         });
@@ -162,29 +168,32 @@ class Map extends JPanel implements KeyListener {
 
         }
 
+
     @Override
     public void keyTyped(KeyEvent keyEvent) {
-        System.out.println("itt vagyok kocsog");
+
     }
 
     @Override
-    public void keyPressed(KeyEvent keyEvent) {
-        System.out.println("itt vagyok kocsog");
-        switch (keyEvent.getKeyCode()){
-            case KeyEvent.VK_W:
-                szar.up(grid);
+    public void keyPressed(KeyEvent e) {
+        switch (e.getKeyCode()){
+            case KeyEvent.VK_UP:
+                person.up(grid);
                 break;
-            case KeyEvent.VK_S:
-
-                szar.down(grid);
+            case KeyEvent.VK_DOWN:
+                person.down(grid);
                 break;
-                case KeyEvent.VK_A:
-                szar.left(grid);
+                case KeyEvent.VK_LEFT:
+                person.left(grid);
                 break;
-            case KeyEvent.VK_D:
-                szar.right(grid);
+            case KeyEvent.VK_RIGHT:
+                person.right(grid);
                 break;
-
+            case KeyEvent.VK_SPACE:
+                person.gather(grid);
+                break;
+            case KeyEvent.VK_ESCAPE :
+                System.exit(0);
         }
     }
 
