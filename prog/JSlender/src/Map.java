@@ -1,8 +1,5 @@
 import javax.swing.*;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.GridLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,10 +10,12 @@ class Map extends JPanel {
         return grid;
     }
     public Player szar = new Player(14,14,true,this);
+    public JButton button0 = new JButton("start");
     public JButton button1 = new JButton("Up");
     public JButton button2 = new JButton("Down");
     public JButton button3 = new JButton("Left");
     public JButton button4 = new JButton("Right");
+    public JButton button5 = new JButton("gather");
     private static final int GAP = 1;
     private final Font LABEL_FONT = new Font(Font.DIALOG, Font.PLAIN, 40);
     public  JLabel[][] grid = new JLabel[15][15];
@@ -52,11 +51,7 @@ class Map extends JPanel {
             for(int row = 0; row<grid.length;row++) {
                  for (int col = 0; col < grid[row].length; col++) {
                      //System.out.print(gridhow[row][col]);
-                     if (row == 14 && col == 14) {
-                         grid[row][col] = new JLabel(szar.getIcon(), SwingConstants.CENTER);
-                     } else {
-                         grid[row][col] = new JLabel("", SwingConstants.CENTER);
-                     }
+                     grid[row][col] = new JLabel("", SwingConstants.CENTER);
                      grid[row][col].setFont(LABEL_FONT);
                      grid[row][col].setOpaque(true);
                      switch (gridhow[row][col]) {
@@ -97,16 +92,21 @@ class Map extends JPanel {
 
 
 
-
-
-
-
             JPanel bot = new JPanel();
+            bot.add(button0);
+        button2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                szar.start();
+
+            }
+        });
             bot.add(button1);
             button1.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent actionEvent) {
                     szar.up();
+
                 }
             });
 
@@ -130,6 +130,13 @@ class Map extends JPanel {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 szar.right();
+            }
+        });
+        bot.add(button5);
+        button5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                szar.gather();
             }
         });
             setLayout(new BorderLayout());

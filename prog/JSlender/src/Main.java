@@ -12,6 +12,7 @@ public class Main{
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.add(mainPanel);
         frame.pack();
+        frame.setMinimumSize(new Dimension(800,800));
         frame.setLocationByPlatform(true);
         frame.setVisible(true);
 
