@@ -89,6 +89,7 @@ public void start(JLabel grid[][]){
     }
 
    public void gather(JLabel grid[][]){
+    if(counter==1){current.hiv();}
     if(grid[locatex][locatey+1].getIcon()==Papers.getIcon()){
 
         counter++;
