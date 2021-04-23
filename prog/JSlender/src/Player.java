@@ -4,12 +4,13 @@ public class  Player extends Character{
     private ImageIcon icon = new ImageIcon("src/img/player.png");
     private Map current;
     public int counter;
-  //  public JLabel[][] grid;
+
    public Player(int x,int y, boolean vis,Map current){
         super(x, y,vis);
       //  this.grid=current.getGrid();
        this.counter=0;
         this.current= current;
+
     }
 
     public int getCounter() {
@@ -89,29 +90,32 @@ public void start(JLabel grid[][]){
     }
 
    public void gather(JLabel grid[][]){
-    if(counter==1){current.hiv();}
-    if(grid[locatex][locatey+1].getIcon()==Papers.getIcon()){
+        if(index(locatex+1) ||index(locatex-1)||index(locatey+1)||index(locatey-1)) {
+            if (grid[locatex][locatey + 1].getIcon() == Papers.getIcon()) {
 
-        counter++;
-        grid[locatex][locatey+1].setIcon(null);
+                counter++;
+                grid[locatex][locatey + 1].setIcon(null);
 
-    }
-    if(grid[locatex+1][locatey].getIcon()==Papers.getIcon()){
+            }
+            if (grid[locatex + 1][locatey].getIcon() == Papers.getIcon()) {
 
-        counter++;
-        grid[locatex+1][locatey].setIcon(null);
-    }
-    if(grid[locatex-1][locatey].getIcon()==Papers.getIcon()){
+                counter++;
+                grid[locatex + 1][locatey].setIcon(null);
+            }
+            if (grid[locatex - 1][locatey].getIcon() == Papers.getIcon()) {
 
-        counter++;
-        grid[locatex-1][locatey].setIcon(null);
-    }
-    if(grid[locatex][locatey-1].getIcon()==Papers.getIcon()){
+                counter++;
+                grid[locatex - 1][locatey].setIcon(null);
+            }
+            if (grid[locatex][locatey - 1].getIcon() == Papers.getIcon()) {
 
-        counter++;
-        grid[locatex][locatey-1].setIcon(null);
-    }
-    //System.out.println(counter);
-
+                counter++;
+                grid[locatex][locatey - 1].setIcon(null);
+            }
+            if (counter == 1) {
+                current.hiv();
+            }
+            //System.out.println(counter);
+        }
     }
 }

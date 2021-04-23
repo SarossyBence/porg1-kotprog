@@ -19,6 +19,7 @@ class Map extends JPanel implements KeyListener {
     public Papers pap6=new Papers(8,13,true,this);
     public Papers pap7=new Papers(1,6,true,this);
     public int counter=0;
+    public int hiv=0;
     private static final int GAP = 1;
     private final Font lab = new Font(Font.DIALOG, Font.PLAIN, 40);
 
@@ -125,15 +126,18 @@ class Map extends JPanel implements KeyListener {
         pap7.place(grid);
         person.start(grid);
             JPanel bot = new JPanel();
-            JLabel l = new JLabel( "counter: "+counter);
-            bot.add(l);
+            bot.add(new JLabel( "counter: "+person.getCounter()));
+
             frame.addKeyListener(this);
             setLayout(new BorderLayout());
             add(Panel, BorderLayout.CENTER);
             add(bot, BorderLayout.PAGE_END);
         }
         public void hiv(){
+        if(hiv<1){
         slender.come(grid);
+        hiv++;
+        }
         }
     @Override
     public void keyTyped(KeyEvent keyEvent) { }
@@ -142,18 +146,23 @@ class Map extends JPanel implements KeyListener {
         switch (e.getKeyCode()){
             case KeyEvent.VK_UP:
                 person.up(grid);
+                if(counter>0){slender.teleport(grid);}
                 break;
             case KeyEvent.VK_DOWN:
                 person.down(grid);
+                if(counter>0){slender.teleport(grid);}
                 break;
                 case KeyEvent.VK_LEFT:
                 person.left(grid);
+                if(counter>0){slender.teleport(grid);}
                 break;
             case KeyEvent.VK_RIGHT:
                 person.right(grid);
+                if(counter>0){slender.teleport(grid);}
                 break;
             case KeyEvent.VK_SPACE:
                 person.gather(grid);
+                System.out.println(counter);
                 break;
             case KeyEvent.VK_ESCAPE :
                 System.exit(0);
