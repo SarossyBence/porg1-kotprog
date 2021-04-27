@@ -4,67 +4,102 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.*;
+import java.util.Scanner;
 
-
-class Map extends JPanel implements KeyListener {
+class Map extends JPanel implements KeyListener,ActionListener {
 
     public Player person = new Player(14,14,true,this);
-    public Slenderman slender = new Slenderman(1,1,true,this);
-    public Papers pap0=new Papers(11,10,true,this);
-    public Papers pap1=new Papers(9,7,true,this);
-    public Papers pap2=new Papers(5,10,true,this);
-    public Papers pap3=new Papers(2,2,true,this);
-    public Papers pap4=new Papers(4,6,true,this);
-    public Papers pap5=new Papers(6,2,true,this);
-    public Papers pap6=new Papers(8,13,true,this);
-    public Papers pap7=new Papers(1,6,true,this);
+    public Slenderman slender ;//= new Slenderman(0,0,true,this,person);
+    public Papers pap0=new Papers(11,10,false,this);
+    public Papers pap1=new Papers(9,7,false,this);
+    public Papers pap2=new Papers(5,10,false,this);
+    public Papers pap3=new Papers(2,2,false,this);
+    public Papers pap4=new Papers(4,6,false,this);
+    public Papers pap5=new Papers(6,2,false,this);
+    public Papers pap6=new Papers(8,13,false,this);
+    public Papers pap7=new Papers(1,6,false,this);
     public int counter=0;
     public int hiv=0;
     private static final int GAP = 1;
     private final Font lab = new Font(Font.DIALOG, Font.PLAIN, 40);
+    public void reader(int[][] a){
+        try {
+            File myObj = new File("C:\\Users\\Nev\\Documents\\GitHub\\porg1-k-tprog\\prog\\JSlender\\src\\map.txt");
+            Scanner myReader = new Scanner(myObj);
+            String[][] data = new String[15][15];
+            int counter =0;
+            while (myReader.hasNextLine()) {
+                data[counter] = myReader.nextLine().split(",");
+            counter++;
+            }
+            for(int i=0; i<15; i++) {
+                for(int j=0; j<15; j++) {
 
-
-
-
-
+                    System.out.println(data[i][j]);
+                    a[i][j]=Integer.parseInt(data[i][j].trim());
+                }
+            }
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
 
     public  JLabel[][] grid = new JLabel[15][15];
-
     public JLabel[][] getGrid()
     {
         return grid;
     }
-
-
-    public int[][] gridhow = {
-            {1, 1, 1, 0, 0, 0, 3, 3, 3, 0, 2, 0, 0, 0, 0},
-            {1, 1, 1, 2, 0, 0, 3, 3, 3, 0, 0, 0, 2, 0, 0},
-            {1, 1, 1, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4, 0},
-            {0, 0, 0, 7, 7, 7, 7, 0, 5, 5, 4, 5, 5, 4, 0},
-            {2, 0, 0, 7, 7, 7, 7, 0, 4, 5, 5, 5, 5, 4, 0},
-            {0, 0, 0, 0, 0, 0, 0, 2, 4, 4, 4, 4, 5, 4, 2},
-            {1, 1, 1, 0, 0, 0, 0, 0, 4, 5, 4, 5, 5, 4, 0},
-            {1, 1, 1, 0, 0, 0, 3, 3, 4, 5, 5, 5, 5, 4, 0},
-            {1, 1, 1, 0, 0, 0, 3, 3, 4, 4, 4, 4, 5, 4, 0},
-            {0, 0, 2, 0, 0, 0, 3, 3, 0, 0, 0, 0, 0, 2, 2},
-            {0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 2, 2},
-            {0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 3, 3, 0, 0, 0},
-            {0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 6, 6, 2, 0, 0},
-            {2, 2, 0, 0, 2, 2, 0, 0, 0, 0, 6, 6, 2, 0, 0},
-            {2, 2, 0, 0, 2, 2, 0, 0, 0, 0, 6, 6, 0, 0, 0},
-    };
-
+    public int[][] gridhow=new int[15][15];
     public int[][] getGridhow() {
         return gridhow;
     }
 
-
-
-
-
-
+public void win(){
+    JFrame win= new JFrame("WIN");
+    win.setMinimumSize(new Dimension(400,400));
+    win.setLocationByPlatform(true);
+    win.setVisible(true);
+    win.setFocusable(true);
+    win.requestFocusInWindow();
+    JPanel bot = new JPanel();
+    JPanel bot1 = new JPanel();
+    JButton button= new JButton("exit");
+    button.setMnemonic(KeyEvent.VK_ESCAPE);
+    button.addActionListener(this);
+    JLabel label=new JLabel( "WINNING");
+    bot1.add(button);
+    bot.add(label);
+    bot.setBorder(BorderFactory.createEmptyBorder(30,30,10,30));
+    win.add(bot,BorderLayout.CENTER);
+    win.add(bot1,BorderLayout.PAGE_END);
+}
+    public void lose(){
+        JFrame win= new JFrame("YOU DIED");
+        win.setMinimumSize(new Dimension(400,400));
+        win.setLocationByPlatform(true);
+        win.setVisible(true);
+        win.setFocusable(true);
+        win.requestFocusInWindow();
+        JPanel bot = new JPanel();
+        JPanel bot1 = new JPanel();
+        JButton button= new JButton("exit");
+        button.setMnemonic(KeyEvent.VK_ESCAPE);
+        button.addActionListener(this);
+        JLabel label=new JLabel( "YOU DIED");
+        bot1.add(button);
+        bot.add(label);
+        bot.setBorder(BorderFactory.createEmptyBorder(30,30,10,30));
+        win.add(bot,BorderLayout.CENTER);
+        win.add(bot1,BorderLayout.PAGE_END);
+    }
     public Map() {
+        reader(gridhow);
         JFrame frame = new JFrame("Slender");
+
+
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.add(this);
         frame.pack();
@@ -126,16 +161,17 @@ class Map extends JPanel implements KeyListener {
         pap7.place(grid);
         person.start(grid);
             JPanel bot = new JPanel();
-            bot.add(new JLabel( "counter: "+person.getCounter()));
+            bot.add(new JLabel( "counter: "+counter));
 
             frame.addKeyListener(this);
             setLayout(new BorderLayout());
             add(Panel, BorderLayout.CENTER);
             add(bot, BorderLayout.PAGE_END);
         }
-        public void hiv(){
+       public void hiv(){
         if(hiv<1){
-        slender.come(grid);
+        slender=new Slenderman(1,1,true,this,person);
+        slender.come(grid,5,5);
         hiv++;
         }
         }
@@ -162,16 +198,22 @@ class Map extends JPanel implements KeyListener {
                 break;
             case KeyEvent.VK_SPACE:
                 person.gather(grid);
-                System.out.println(counter);
+                counter=person.getCounter();
+                if (counter==1){hiv();}
+                if (counter==8){win();}
                 break;
             case KeyEvent.VK_ESCAPE :
                 System.exit(0);
+               break;
+
         }
     }
     @Override
     public void keyReleased(KeyEvent e) { }
 
-
-
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
+        System.exit(0);
+    }
 }
 

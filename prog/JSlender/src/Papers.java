@@ -12,8 +12,11 @@ public class Papers extends Character{
     }
 public void place(JLabel grid[][]){
         grid[locatex][locatey].setIcon(icon);
+
+
 }
     public static ImageIcon getIcon() {
         return icon;
+
     }
 }

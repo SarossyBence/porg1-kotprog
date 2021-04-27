@@ -5,6 +5,7 @@ public class  Player extends Character{
     private Map current;
     public int counter;
 
+
    public Player(int x,int y, boolean vis,Map current){
         super(x, y,vis);
       //  this.grid=current.getGrid();
@@ -36,6 +37,7 @@ public class  Player extends Character{
         return (a>0 && 15>a);
 
     }
+
 public boolean isIndex(int x,int y){
         if(!index(x) || !index(y)){
             return false;
@@ -90,7 +92,7 @@ public void start(JLabel grid[][]){
     }
 
    public void gather(JLabel grid[][]){
-        if(index(locatex+1) ||index(locatex-1)||index(locatey+1)||index(locatey-1)) {
+        if(index(locatex+1) &&index(locatex-1)&&index(locatey+1) && index(locatey-1)) {
             if (grid[locatex][locatey + 1].getIcon() == Papers.getIcon()) {
 
                 counter++;
@@ -113,9 +115,10 @@ public void start(JLabel grid[][]){
                 grid[locatex][locatey - 1].setIcon(null);
             }
             if (counter == 1) {
-                current.hiv();
+               // current.hiv();
             }
-            //System.out.println(counter);
+
+           // System.out.println(counter);
         }
     }
 }
