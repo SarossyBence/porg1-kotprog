@@ -10,7 +10,7 @@ import java.util.Scanner;
 class Map extends JPanel implements KeyListener,ActionListener {
 
     public Player person = new Player(14,14,true,this);
-    public Slenderman slender ;//= new Slenderman(0,0,true,this,person);
+    public Slenderman slender = new Slenderman(5,5,true,this,person);
     public Papers pap0=new Papers(11,10,false,this);
     public Papers pap1=new Papers(9,7,false,this);
     public Papers pap2=new Papers(5,10,false,this);
@@ -19,7 +19,7 @@ class Map extends JPanel implements KeyListener,ActionListener {
     public Papers pap5=new Papers(6,2,false,this);
     public Papers pap6=new Papers(8,13,false,this);
     public Papers pap7=new Papers(1,6,false,this);
-    public int counter=0;
+    private JLabel counter= new JLabel();
     public int hiv=0;
     private static final int GAP = 1;
     private final Font lab = new Font(Font.DIALOG, Font.PLAIN, 40);
@@ -36,7 +36,7 @@ class Map extends JPanel implements KeyListener,ActionListener {
             for(int i=0; i<15; i++) {
                 for(int j=0; j<15; j++) {
 
-                    System.out.println(data[i][j]);
+
                     a[i][j]=Integer.parseInt(data[i][j].trim());
                 }
             }
@@ -96,10 +96,9 @@ public void win(){
         win.add(bot1,BorderLayout.PAGE_END);
     }
     public Map() {
+
         reader(gridhow);
         JFrame frame = new JFrame("Slender");
-
-
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.add(this);
         frame.pack();
@@ -161,17 +160,23 @@ public void win(){
         pap7.place(grid);
         person.start(grid);
             JPanel bot = new JPanel();
-            bot.add(new JLabel( "counter: "+counter));
+            counter.setText("0");
+            bot.add(new JLabel("papers:"));
+            bot.add(counter);
 
             frame.addKeyListener(this);
             setLayout(new BorderLayout());
             add(Panel, BorderLayout.CENTER);
             add(bot, BorderLayout.PAGE_END);
         }
+        public void updateCount(){
+
+
+    }
+
        public void hiv(){
         if(hiv<1){
-        slender=new Slenderman(1,1,true,this,person);
-        slender.come(grid,5,5);
+            slender.come(grid,slender.rxx,slender.ryy);
         hiv++;
         }
         }
@@ -182,26 +187,28 @@ public void win(){
         switch (e.getKeyCode()){
             case KeyEvent.VK_UP:
                 person.up(grid);
-                if(counter>0){slender.teleport(grid);}
+
                 break;
             case KeyEvent.VK_DOWN:
                 person.down(grid);
-                if(counter>0){slender.teleport(grid);}
+
                 break;
                 case KeyEvent.VK_LEFT:
                 person.left(grid);
-                if(counter>0){slender.teleport(grid);}
+
                 break;
             case KeyEvent.VK_RIGHT:
                 person.right(grid);
-                if(counter>0){slender.teleport(grid);}
+
                 break;
             case KeyEvent.VK_SPACE:
                 person.gather(grid);
-                counter=person.getCounter();
-                if (counter==1){hiv();}
-                if (counter==8){win();}
+                counter.setText(String.valueOf(person.getCounter()));
+                if (person.getCounter()==1){hiv();}
+                if (person.getCounter()==8){win();}
+
                 break;
+
             case KeyEvent.VK_ESCAPE :
                 System.exit(0);
                break;

@@ -8,7 +8,6 @@ public class  Player extends Character{
 
    public Player(int x,int y, boolean vis,Map current){
         super(x, y,vis);
-      //  this.grid=current.getGrid();
        this.counter=0;
         this.current= current;
 
@@ -18,9 +17,7 @@ public class  Player extends Character{
         return counter;
     }
 
-    public void setCounter(int counter) {
-        this.counter = counter;
-    }
+
 
     @Override
     public String toString() {
@@ -29,9 +26,7 @@ public class  Player extends Character{
                 '}';
     }
 
-    public  ImageIcon getIcon() {
-        return icon;
-    }
+
 
     public boolean index(int a){
         return (a>0 && 15>a);
@@ -55,11 +50,17 @@ public void start(JLabel grid[][]){
 
 
 }
+
+
     public void up(JLabel grid[][]){
+
                     if(isIndex(locatex-1,locatey)) {
                         grid[locatex-1][locatey].setIcon(icon);
                         grid[locatex][locatey].setIcon(null);
                         locatex--;
+                        if(counter>0){current.slender.teleport(grid);
+                          current.slender.visible(grid);
+                        }
                     }
 
     }
@@ -69,6 +70,9 @@ public void start(JLabel grid[][]){
             grid[locatex+1][locatey].setIcon(icon);
             grid[locatex][locatey].setIcon(null);
             locatex++;
+            if(counter>0){current.slender.teleport(grid);
+            current.slender.visible(grid);
+            }
         }
 
     }
@@ -78,6 +82,9 @@ public void start(JLabel grid[][]){
             grid[locatex][locatey-1].setIcon(icon);
             grid[locatex][locatey].setIcon(null);
             locatey--;
+            if(counter>0){current.slender.teleport(grid);
+                current.slender.visible(grid);
+            }
         }
 
     }
@@ -87,9 +94,13 @@ public void start(JLabel grid[][]){
             grid[locatex][locatey+1].setIcon(icon);
             grid[locatex][locatey].setIcon(null);
             locatey++;
+            if(counter>0){current.slender.teleport(grid);
+                current.slender.visible(grid);
+            }
         }
 
     }
+
 
    public void gather(JLabel grid[][]){
         if(index(locatex+1) &&index(locatex-1)&&index(locatey+1) && index(locatey-1)) {
@@ -114,11 +125,8 @@ public void start(JLabel grid[][]){
                 counter++;
                 grid[locatex][locatey - 1].setIcon(null);
             }
-            if (counter == 1) {
-               // current.hiv();
-            }
 
-           // System.out.println(counter);
+
         }
     }
 }
