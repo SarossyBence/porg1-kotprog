@@ -4,15 +4,11 @@ public abstract class Character extends JPanel {
     public int locatex;
     public int locatey;
     public boolean visible;
+/**
+ * a Charakter osztály a karakterek föbb tulajdonságait adja meg tőle öröklölnek
+ * a Player,Slendermam,Papers osztályok
+ * **/
 
-
-    public void setLocatex(int locatex) {
-        this.locatex = locatex;
-    }
-
-    public void setLocatey(int locatey) {
-        this.locatey = locatey;
-    }
 
     @Override
     public void setVisible(boolean visible) {

@@ -8,7 +8,9 @@ import java.io.*;
 import java.util.Scanner;
 
 class Map extends JPanel implements KeyListener,ActionListener {
-
+/**
+ * a Map osztály feladatata a pálya események kezelése
+ * **/
     public Player person = new Player(14,14,true,this);
     public Slenderman slender = new Slenderman(5,5,true,this,person);
     public Papers pap0=new Papers(11,10,false,this);
@@ -25,7 +27,7 @@ class Map extends JPanel implements KeyListener,ActionListener {
     private final Font lab = new Font(Font.DIALOG, Font.PLAIN, 40);
     public void reader(int[][] a){
         try {
-            File myObj = new File("C:\\Users\\Nev\\Documents\\GitHub\\porg1-k-tprog\\prog\\JSlender\\src\\map.txt");
+            File myObj = new File("src/map.txt");
             Scanner myReader = new Scanner(myObj);
             String[][] data = new String[15][15];
             int counter =0;
@@ -57,7 +59,12 @@ class Map extends JPanel implements KeyListener,ActionListener {
         return gridhow;
     }
 
-public void win(){
+
+public void win()
+{
+    /**
+     * meg jelenjen egy ablak nyertél ablak.
+     * **/
     JFrame win= new JFrame("WIN");
     win.setMinimumSize(new Dimension(400,400));
     win.setLocationByPlatform(true);
@@ -77,6 +84,9 @@ public void win(){
     win.add(bot1,BorderLayout.PAGE_END);
 }
     public void lose(){
+        /**
+         * meg jelenjen egy ablak ha meg haltál ablak.
+         * **/
         JFrame win= new JFrame("YOU DIED");
         win.setMinimumSize(new Dimension(400,400));
         win.setLocationByPlatform(true);
@@ -96,7 +106,21 @@ public void win(){
         win.add(bot1,BorderLayout.PAGE_END);
     }
     public Map() {
-
+/**
+ * a pálya generálás egy int[][] alapján feltöltjük a JLabel mátrixot színekkel egy adott szín egy adot pálya elem
+ * a színek sorban:
+ * zöld kisfa,nagyfa
+ * kék autó és kamion orra
+ *szürke a szikla
+ * sötét szürke a hordó
+ * narancs a ház fala
+ * sárga a ház belterülete
+ * cián a kamion platója
+ *
+ * itt vannak meg hívva a példánnyosított papirok is
+ * és van egy counter ami ki írja hogy eddig meny papírod van
+ *
+ * **/
         reader(gridhow);
         JFrame frame = new JFrame("Slender");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -169,12 +193,10 @@ public void win(){
             add(Panel, BorderLayout.CENTER);
             add(bot, BorderLayout.PAGE_END);
         }
-        public void updateCount(){
-
-
-    }
-
        public void hiv(){
+           /**
+            * meg hívja a slenderment a pályára
+            * **/
         if(hiv<1){
             slender.come(grid,slender.rxx,slender.ryy);
         hiv++;
@@ -184,6 +206,9 @@ public void win(){
     public void keyTyped(KeyEvent keyEvent) { }
     @Override
     public void keyPressed(KeyEvent e) {
+        /**
+     * a karakter mozgásának és cselekvvésének a billentyüzettel való irányítása
+     * **/
         switch (e.getKeyCode()){
             case KeyEvent.VK_UP:
                 person.up(grid);
